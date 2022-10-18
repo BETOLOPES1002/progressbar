@@ -29,18 +29,12 @@
             </form>  
         </div>
         <div class="col-12 col-md-8">
-            <total-proyecto :numeroProyectos="numeroProyectos" :proyectos="proyectos" :cambiarEstado="cambiarEstado"  :limpiarData="limpiarData" :deleteP="deleteP"/>
+            <total-proyecto :numeroProyectos="numeroProyectos" :proyectos="proyectos" :cambiarEstado="cambiarEstado"/>
         </div>
     </div>
-
-    
-    
-    
-    
 </template>
 
 <script>
-import {onMounted} from "vue";
 import Progressbar from "./ProgressBar.vue";
 import TotalProyecto from "./TotalProyecto.vue";
     export default{
@@ -61,9 +55,6 @@ import TotalProyecto from "./TotalProyecto.vue";
             this.proyectos.push(proyecto);
             
             this.saveData();
-           
-
-           
             this.proyecto = "";
             this.tipo = "";
             this.urgente = false;
@@ -73,24 +64,7 @@ import TotalProyecto from "./TotalProyecto.vue";
             // console.log(proyecto, campo);
             proyecto[campo] = !proyecto[campo];
             this.saveData();
-        },
-        saveData(){
-            localStorage.setItem("proyectos",JSON.stringify (this.proyectos));
-        },
-        
-        limpiarData(){
-            this.proyectos=[];
-            localStorage.clear();
-        },
-        deleteP(index){
-            this.proyectos.splice(index,1);
-            this.proyecto=JSON.parse(localStorage.removeItem("proyectos")) ||[];
-            
-        }
-        
-        
-        
-        
+        }      
     },
     computed: {
         numeroProyectos() {
@@ -105,22 +79,14 @@ import TotalProyecto from "./TotalProyecto.vue";
             });
             return (completados * 100) / this.numeroProyectos || 0;
         }
-
     },
     components: {
         Progressbar,
          TotalProyecto 
     },
     
-
-
-    mounted(){
-        this.proyectos=JSON.parse(localStorage.getItem("proyectos")) ||[];
-    },
     
 };
-
-
 
 </script>
 
