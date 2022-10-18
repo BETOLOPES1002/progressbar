@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "progressbar",
+=======
+  "name": "04-formularios",
+>>>>>>> bc1f26d5254d4bf65a1ca2188311561fcdec5416
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

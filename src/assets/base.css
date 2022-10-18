@@ -1,8 +1,17 @@
 *{
+<<<<<<< HEAD
   margin: 0;
   padding:0;
   box-sizing: border-box;
 }
 body{
   font-size: medium;
+=======
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-size: medium;
+>>>>>>> bc1f26d5254d4bf65a1ca2188311561fcdec5416
 }
